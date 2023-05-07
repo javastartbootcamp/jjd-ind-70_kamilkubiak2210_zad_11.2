@@ -12,6 +12,7 @@ public class Main {
             System.out.println(person);
         } catch (NameUndefinedException e) {
             System.err.println(e.getMessage());
+            System.err.println("Koniec programu");
         }
 
         Person person2 = new Person("Jan", "Kowalski", 25, "1234567890");
@@ -21,7 +22,7 @@ public class Main {
             System.out.println(person2);
         } catch (IncorrectAgeException e) {
             System.err.println(e.getMessage());
+            System.err.println("Koniec programu");
         }
-
     }
 }

@@ -10,31 +10,27 @@ public class Person {
     private final String pesel;
 
     public Person(String firstName, String lastName, int age, String pesel) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-
-        checkFirstName(firstName);
-        checkLastName(lastName);
-        checkAge(age);
-        this.age = age;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setAge(age);
         this.pesel = pesel;
     }
 
-    private static void checkFirstName(String firstName) {
+    private void checkFirstName(String firstName) {
         if (firstName == null || firstName.length() < 2) {
-            throw new NameUndefinedException("Imię nieprawidłowe " + firstName + "\nKoniec programu");
+            throw new NameUndefinedException("Imię nieprawidłowe " + firstName);
         }
     }
 
-    private static void checkLastName(String lastName) {
+    private void checkLastName(String lastName) {
         if (lastName == null || lastName.length() < 2) {
-            throw new NameUndefinedException("Nazwisko nieprawidłowe " + lastName + "\nKoniec programu");
+            throw new NameUndefinedException("Nazwisko nieprawidłowe " + lastName);
         }
     }
 
-    private static void checkAge(int age) {
+    private void checkAge(int age) {
         if (age < 1) {
-            throw new IncorrectAgeException("Nieprawidłowy wiek" + "\nKoniec programu");
+            throw new IncorrectAgeException("Nieprawidłowy wiek " + age);
         }
     }
 
